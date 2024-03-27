@@ -2,42 +2,41 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ServiceResource\Pages;
-use App\Filament\Resources\ServiceResource\RelationManagers;
-use App\Models\Service;
+use App\Filament\Resources\CategoryResource\Pages;
+use App\Filament\Resources\CategoryResource\RelationManagers;
+use App\Models\Category;
 use Filament\Forms;
 use Filament\Forms\Components\Radio;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Set;
+use Filament\Tables\Columns\TextColumn;
+use Illuminate\Support\Str;
+use Filament\Tables\Columns\ToggleColumn;
 
-class ServiceResource extends Resource
+
+class CategoryResource extends Resource
 {
-    protected static ?string $model = Service::class;
+    protected static ?string $model = Category::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('name')->required(),
-                TextInput::make('icon_class'),
-                TextInput::make('short_desc')
-                    ->label('Short Description ')
-                    ->required(),
-                RichEditor::make('description')->columnSpan(2),
-                Radio::make('status')
-                    ->label('Publish this Service ?')
-                    ->boolean()
-                    ->inline()
+                TextInput::make('name')->required()->placeholder('Name')
+
+                    ->live()
+                    ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
+
+                TextInput::make('slug')->required()->placeholder('Slug'),
 
 
             ]);
@@ -47,10 +46,9 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->label('Title'),
-                TextColumn::make('short_desc')->label('Short Description'),
+                TextColumn::make('name')->label('Name'),
+                TextColumn::make('slug')->label('Slug'),
                 ToggleColumn::make('status')
-
             ])
             ->filters([
                 //
@@ -75,9 +73,9 @@ class ServiceResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListServices::route('/'),
-            'create' => Pages\CreateService::route('/create'),
-            'edit' => Pages\EditService::route('/{record}/edit'),
+            'index' => Pages\ListCategories::route('/'),
+            'create' => Pages\CreateCategory::route('/create'),
+            'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
     }
 }
