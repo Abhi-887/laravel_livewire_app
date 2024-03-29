@@ -5,18 +5,20 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ArticleResource\Pages;
 use App\Filament\Resources\ArticleResource\RelationManagers;
 use App\Models\Article;
+use App\Models\Category;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Forms\Components;
-use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Select;
-
 
 class ArticleResource extends Resource
 {
@@ -28,29 +30,24 @@ class ArticleResource extends Resource
     {
         return $form
             ->schema([
-                Repeater::make('content block')
-                    ->schema([
-                        TextInput::make('name')->label('Name')->required(),
-                        Select::make('category')
-                            ->label('Role')
-                            ->options([
-                                'category' => 'Member',
-                                'administrator' => 'Administrator',
-                                'owner' => 'Owner',
-                            ])
-                            ->required(),
-                    ])
-                    ->cloneable()
+                TextInput::make('title')->required()->placeholder('Title'),
+                Select::make('category_id')->label('Category')->options(Category::all()->pluck('name', 'id')),
+                TextInput::make('author')->placeholder('Author'),
+                FileUpload::make('image'),
+                RichEditor::make('content')->columnSpan(2),
             ]);
     }
-
 
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')->label('Title')->searchable(),
+                TextColumn::make('author')->label('Author'),
+
+
+                ToggleColumn::make('status')
             ])
             ->filters([
                 //

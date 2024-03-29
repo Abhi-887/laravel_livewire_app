@@ -12,6 +12,9 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4",
+        "openai-php/laravel": "^0.8.1",
+        "pxlrbt/filament-excel": "^2.1",
+        "pxlrbt/filament-spotlight": "^1.0",
         "statikbe/laravel-filament-flexible-content-blocks": "^0.2.12"
     },
     "require-dev": {
@@ -64,7 +67,8 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
         }
     },
     "minimum-stability": "stable",
