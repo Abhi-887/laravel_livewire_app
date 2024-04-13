@@ -1,0 +1,157 @@
+@font-face {
+  font-family: CenturyGothic;
+  src: url(font/century-gothic/CenturyGothic.ttf);
+}
+  
+  body {
+    color: #777;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .navbar,
+  .nav-bar-header {
+    background-image: url("image/nav-bg.jpg");
+    padding: 5px 0 0px 0;
+  }
+
+  .nav-item li a {
+    display: block;
+    text-decoration: none;
+    padding: 20px 20px;
+    font-weight: 500;
+    transition: 0.4s all;
+  }
+
+  .color {
+    color: white;
+  }
+
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link.show {
+    color: #fff;
+  }
+
+  .search-toggle {
+    background: url("image/search_icon.png") no-repeat scroll 7px 5px;
+    cursor: pointer;
+    height: 25px;
+    margin-top: 4px;
+    width: 30px;
+    border-right: 1px solid #DDDDDD;
+  }
+
+  .cart_mini_right {
+    background: url("image/cart.png") no-repeat scroll left 11px;
+    color: #fff;
+    margin-left: 14px;
+    cursor: pointer;
+  }
+
+  .nav-item li a:hover {
+    color: #8BADBD;
+  }
+
+  .nav-item:hover {
+    color: #8BADBD;
+  }
+
+  .color.text-decoration-none:hover {
+    color: #8BADBD;
+  }
+
+  .dropdown-toggle::after {
+    content: none;
+  }
+
+  .nav-link.dropdown-toggle.color:hover {
+    color: #8BADBD;
+  }
+
+  .navbar-toggler-icon {
+    background: url("image/sprite.png") no-repeat scroll -58px -123px transparent;
+    height: 33px;
+    margin-right: 5px;
+    margin-top: 10px;
+    width: 40px;
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-min-width: 19rem;
+  }
+
+  .search-input {
+    display: none;
+  }
+
+  .menu-icon {
+    width: 23%;
+  }
+
+  .menu-icon1 {
+    width: 100%;
+    max-width: 17.7%;
+  }
+  .black {
+    color: gray;
+  }
+
+  .black:hover {
+    color: #000;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .down {
+    margin-top: 16%;
+    --bs-dropdown-min-width: 15rem;
+  }
+  @media (max-width: 768px) {
+    .container {
+      max-width: 100%;
+    }
+
+    .width_Global {
+      padding: 0;
+    }
+
+    .col-xl-4 {
+      width: 100%;
+      margin: 0 0 20px 0;
+    }
+    .down {
+      margin-top: 0;
+      --bs-dropdown-min-width: 10rem;
+    }
+
+  }
+
+  @media (min-width: 769px) and (max-width: 992px) {
+    .container {
+      max-width: 100%;
+    }
+
+    .col-xl-4 {
+      width: 50%;
+      margin: 0 0 20px 0;
+    }
+    .down {
+      margin-top: 0;
+      --bs-dropdown-min-width: 10rem;
+    }
+  }

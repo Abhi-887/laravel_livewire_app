@@ -1,0 +1,40 @@
+.card-body {
+    padding: 0;
+  }
+  .accordion-button.pluse.collapsed::after {
+    background: url("image/sprite1.png") no-repeat scroll -208px -127px transparent;
+    margin-left: 43%;
+  }
+
+
+  .accordion-button.pluse:not(.collapsed)::after {
+    background: url("image/sprite1.png") no-repeat scroll -232px -124px transparent;
+    margin-left: 44%;
+  }
+  .background_image_link {
+    background: #f3f3f3;
+    text-decoration: none;
+    color: #444;
+  }
+  .imge_link:hover {
+    color: #222;
+    font-weight: bold;
+    background: #e8e8e8;
+  }
+  .imge_link {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+  .image_full {
+    width: 100%;
+  }
+  .item_number::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url("image/sprite.png") no-repeat scroll 2px -37px transparent;
+    left: 0;
+  }
+  .page-link {
+    color: #000;
+  }

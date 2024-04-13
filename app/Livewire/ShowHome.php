@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Livewire;
+
+use App\Models\Category;
 use App\Models\Service;
 
 use Livewire\Component;
@@ -8,11 +10,11 @@ use Livewire\Component;
 class ShowHome extends Component
 {
     public function render()
-
     {
-        $services = Service::orderBy('name','ASC')->get();
-        return view('livewire.show-home',[
-            'services' => $services
+
+        $categories = Category::all()->get;
+        return view('livewire.show-home', [
+
         ]);
 
     }

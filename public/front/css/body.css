@@ -1,0 +1,62 @@
+
+
+.black-2 {
+  background: url(image/center_homebg.jpg) 50% 0 repeat-x fixed transparent;
+}
+
+#comment-box {
+  background-color: #000;
+  position: relative;
+  padding: 20px;
+  color: white;
+  margin: 11%;
+}
+
+#comment-box::after {
+  content: "";
+  position: absolute;
+  height: 26px;
+  width: 34px;
+  bottom: -25px;
+  background-color: #000;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  left: 36px;
+}
+
+
+
+.black-colour {
+  color: black;
+}
+
+.black-colour:hover {
+  color: #8BADBD;
+}
+
+.image {
+  position: relative;
+}
+
+.image__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.image:hover .image__overlay {
+  opacity: 1;
+  padding: 22%;
+}
+
+.image__description {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+
+

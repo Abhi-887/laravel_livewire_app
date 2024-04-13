@@ -1,0 +1,94 @@
+.all-background1 {
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+  }
+
+
+  .carousel-control-next-icon {
+    z-index: 100;
+    cursor: pointer;
+    position: relative;
+    background: url(/image/arrow4.png) no-repeat 0 0;
+    width: 70px;
+    height: 70px;
+    left: 20px !important;
+  }
+
+  .carousel-control-prev-icon {
+    z-index: 100;
+    cursor: pointer;
+    position: relative;
+    background: url(image/arrow3.png) no-repeat 0 0;
+    width: 70px;
+    height: 70px;
+    left: 20px !important;
+  }
+  .background1 {
+    background-image: url("image/slide-bg.jpg");
+  }
+
+  .background2 {
+    background-image: url("image/background.jpg");
+    height: 690px;
+  }
+
+  .image_height {
+    padding-top: 6%;
+    margin-top: 11%;
+  }
+
+  .background3 {
+    background-image: url("image/gift-pack-slider.jpg");
+    height: 690px;
+  }
+
+  .background4 {
+    background-image: url("image/wedding2.jpg");
+    height: 690px;
+  }
+
+
+  .carousel-control-prev-icon:hover {
+    background: url("image/arrow1.png") no-repeat 0 0;
+  }
+
+  .carousel-control-next-icon:hover {
+    background: url("image/arrow2.png") no-repeat 0 0;
+  }
+
+  .text-img {
+    padding: 2% 0 7% 0;
+  }
+
+  .background5 {
+    background-image: url("image/background1.jpg");
+    height: 690px;
+  }
+
+  .background6 {
+    background-image: url("image/background2.jpg");
+    padding: 2% 0 2% 0;
+    height: 690px;
+  }
+
+  .cake1 {
+    color: #8BADBD;
+  }
+  @media (max-width: 768px) {
+
+    .carousel-item {
+      height: 300px;
+    }
+
+    .carousel-control-prev-icon {
+      left: 0px !important;
+    }
+
+    .carousel-control-next-icon {
+      left: 0px !important;
+    }
+  }
+

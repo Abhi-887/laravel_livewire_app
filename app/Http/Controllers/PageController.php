@@ -10,16 +10,9 @@ class PageController extends Controller
 {
     public function __invoke(Page $page)
     {
-        if (! $page->isPublished()) {
-            abort(Response::HTTP_NOT_FOUND);
-        }
 
-        SEOTools::setTitle($page->getSEOTitle());
-        SEOTools::setDescription($page->getSEODescription());
-        SEOTools::jsonLd()->addImage($page->getSEOImageUrl());
-        SEOTools::opengraph()->addImage($page->getSEOImageUrl());
 
-        return view('pages.index', [
+        return view('page', [
             'page' => $page,
             'title' => $page->title,
         ]);

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PageController;
+use App\Livewire\ContactUs;
 use App\Livewire\ShowHome;
 use App\Livewire\ShowServices;
 use Illuminate\Support\Facades\Route;
@@ -15,10 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/page', [PageController::class, '__invoke']);
 
 
 Route::get('/', ShowHome::class)->name('home');
 Route::get('/services', ShowServices::class)->name('servicePage');
+Route::get('/contact-us', ContactUs::class)->name('contactus');
+
+
+
