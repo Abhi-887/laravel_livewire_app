@@ -222,117 +222,22 @@
         </div>
     </div>
     <div class="testimonial">
-        <div class="container  mt-5 pt-4">
-            <div class="">
+        <div class="container mt-5 pt-4">
+            <div>
                 <h3 class="text-center">Read what some of our customers have to say below...</h3>
             </div>
             <div class="my-slider">
+                @foreach($testimonials as $testimonial)
                 <div>
-                    <div id="comment-box">Just to say again what a great job you did on the cake! It went
-                        down a
-                        storm - in
-                        fact
-                        my
-                        husband, a HUGE Man U fan, couldn't cut if for three days he was so impressed with
-                        it -
-                        we had to
-                        send
-                        people cake after the party!</div>
-                    <p class="text-center"><a class="author text-decoration-none text-black" href="#">Clare
-                            Young</a></p>
+                    <div id="comment-box">{{ $testimonial->description }}</div>
+                    <p class="text-center"><a class="author text-decoration-none text-black" href="#">{{
+                            $testimonial->customer }}</a></p>
                 </div>
-                <div>
-                    <div id="comment-box">We just wanted to email you and say thank you for the amazing cake
-                        you
-                        did
-                        yesterday. Everyone was amazed with the beautiful design and execution, though the
-                        cake
-                        didn't last
-                        long :-) -it was too delicious. Thank you for making the day even more special, for
-                        all
-                        your help in
-                        the design of the cake and for the finished results and smiles and applause all
-                        round.
-                    </div>
-                    <p class="text-center"><a class="author text-decoration-none text-black" href="#">Sharon
-                            &
-                            Gavin Boyd</a></p>
-                </div>
-                <div>
-                    <div id="comment-box">Just wanted 2 say thank u 4 making such a gorgeous cake it's
-                        better
-                        than what we
-                        could have imagined thanks again :-)
-                    </div>
-                    <p class="text-center"><a class="author text-decoration-none text-black" href="#">Lesley-Ann
-                            Brown</a></p>
-                </div>
-                <div>
-                    <div id="comment-box">3D Cakes met all our expectations and more. It was obvious by the
-                        final product that taste and attention to detail are what 3D Cakes are all about. A
-                        cake
-                        with 'wow' factor, we can't thank you enough.
-                    </div>
-                    <p class="text-center"><a class="author text-decoration-none text-black" href="#">Mr &
-                            Mrs
-                            Thomson</a></p>
-                </div>
-                <div>
-                    <div id="comment-box">Provided a great service. Listened to my opinions and gave
-                        professional guidance and advice on my choices, created a truly special cake,
-                        exactly
-                        what I dreamed of for my big day, perfection.
-
-                    </div>
-                    <p class="text-center"><a class="author text-decoration-none text-black" href="#">Laura
-                            &
-                            Grant Hughes</a></p>
-                </div>
-                <div>
-                    <div id="comment-box">Just a note to say thanks so much again for sorting out the cake
-                        at
-                        such short notice - everyone was very impressed, and it tasted as good as it looked
-                        (once we brought ourselves to cut it!
-                    </div>
-                    <p class="text-center"><a class="author text-decoration-none text-black" href="#">Clare
-                            O'Donnell</a></p>
-                </div>
-                <div>
-                    <div id="comment-box">Just to say again what a great job you did on the cake! It went
-                        down a
-                        storm - in
-                        fact
-                        my
-                        husband, a HUGE Man U fan, couldn't cut if for three days he was so impressed with
-                        it -
-                        we had to
-                        send
-                        people cake after the party!</div>
-                    <p class="text-center"><a class="author text-decoration-none text-black" href="#">Eileen
-                            Swinton</a></p>
-                </div>
-                <div>
-                    <div id="comment-box">'Thanks for the great cake! It was exactly what we asked for!
-                        Everyone
-                        commented on how good the cake looked and even said it tasted nice too! Thanks again
-                        for
-                        helping me have a perfect day!'
-                    </div>
-                    <p class="text-center"><a class="author text-decoration-none text-black" href="#">Victoria &
-                            James Cummings</a></p>
-                </div>
-                <div>
-                    <div id="comment-box">Thanks again for the fab cake it tasted as good as it looked and
-                        everyone thought it was brilliant. I will certainly be passing your web details to
-                        all
-                        my buddies.
-                    </div>
-                    <p class="text-center"><a class="author text-decoration-none text-black" href="#">Louise
-                            McLeod</a></p>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
+
     </div>
     <hr>
     <div class="text-center py-5"><a href=""><img class="img-fluid" src="{{url('front')}}/image/feedback-graphic.jpg"
